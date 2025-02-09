@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App AI Prompt Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
+        select, input, button, textarea { width: 100%; margin: 10px 0; padding: 10px; }
+        button { background: blue; color: white; border: none; cursor: pointer; }
+        button:hover { background: darkblue; }
+        pre { background: #222; color: #0f0; padding: 10px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+
+    <h2>AI Prompt Generator for Web Apps</h2>
+
+    <label>Type of Web App:</label>
+    <select id="appType">
+        <option value="E-commerce">E-commerce</option>
+        <option value="Social Media">Social Media</option>
+        <option value="Portfolio">Portfolio</option>
+        <option value="Blog">Blog</option>
+        <option value="Dashboard">Dashboard</option>
+    </select>
+
+    <label>Technology/Framework:</label>
+    <select id="techStack">
+        <option value="React">React</option>
+        <option value="Next.js">Next.js</option>
+        <option value="Vue.js">Vue.js</option>
+        <option value="Angular">Angular</option>
+        <option value="Django">Django</option>
+    </select>
+
+    <label>Key Features:</label>
+    <select id="features">
+        <option value="User authentication">User Authentication</option>
+        <option value="Real-time chat">Real-time Chat</option>
+        <option value="Payment gateway">Payment Gateway</option>
+        <option value="Dark mode toggle">Dark Mode Toggle</option>
+        <option value="AI-powered search">AI-Powered Search</option>
+    </select>
+
+    <label>Database/API:</label>
+    <select id="database">
+        <option value="Firebase">Firebase</option>
+        <option value="MongoDB">MongoDB</option>
+        <option value="PostgreSQL">PostgreSQL</option>
+        <option value="REST API">REST API</option>
+        <option value="GraphQL API">GraphQL API</option>
+    </select>
+
+    <label>Performance/Security Considerations:</label>
+    <select id="security">
+        <option value="SEO optimization">SEO Optimization</option>
+        <option value="JWT authentication">JWT Authentication</option>
+        <option value="Data caching">Data Caching</option>
+        <option value="Two-factor authentication">Two-Factor Authentication</option>
+        <option value="Rate limiting">Rate Limiting</option>
+    </select>
+
+    <button onclick="generatePrompt()">Generate AI Prompt</button>
+
+    <h3>Generated AI Prompt:</h3>
+    <pre id="output"></pre>
+
+    <script>
+        function generatePrompt() {
+            let appType = document.getElementById("appType").value;
+            let techStack = document.getElementById("techStack").value;
+            let features = document.getElementById("features").value;
+            let database = document.getElementById("database").value;
+            let security = document.getElementById("security").value;
+
+            let prompt = `Build a ${appType} web app using ${techStack}. Include features like ${features}. Use ${database} for data management and ensure ${security}.`;
+
+            document.getElementById("output").textContent = prompt;
+        }
+    </script>
+
+</body>
+</html>
